@@ -293,6 +293,7 @@ class _SCROLLSSummaryTask(_SCROLLSTask):
 
     def construct_requests(self, doc, ctx, **kwargs):
         kwargs.pop("apply_chat_template", False)
+        kwargs.pop("chat_template", None)
         return Instance(
             request_type="generate_until",
             doc=doc,
@@ -418,6 +419,7 @@ class NarrativeQA(_SCROLLSTask):
 
     def construct_requests(self, doc, ctx, **kwargs):
         kwargs.pop("apply_chat_template", False)
+        kwargs.pop("chat_template", None)
         return Instance(
             request_type="generate_until",
             doc=doc,
